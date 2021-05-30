@@ -105,6 +105,10 @@ namespace alxnbl.OneNoteMdExporter
                 Log.Information(Localizer.GetString("ExportSuccessful"), exportPath);
                 Log.Information("");
             }
+            
+            //remove the tmp directory
+            if (Directory.Exists("tmp"))
+                Directory.Delete("tmp", true);
 
             if (!opts.NoInput)
             {
