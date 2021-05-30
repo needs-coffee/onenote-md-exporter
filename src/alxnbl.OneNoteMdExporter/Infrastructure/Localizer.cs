@@ -12,8 +12,8 @@ namespace alxnbl.OneNoteMdExporter.Infrastructure
         public static string GetString(string code)
         {
             var lang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-            var transFile = Path.Combine("Resources", $"trad.{lang}.json");
-            var transFileEn = Path.Combine("Resources", $"trad.en.json");
+            var transFile = Path.Combine(@"..\Resources", $"trad.{lang}.json");
+            var transFileEn = Path.Combine(@"..\Resources", $"trad.en.json");
             string localizedText = null;
 
             if (File.Exists(transFile))

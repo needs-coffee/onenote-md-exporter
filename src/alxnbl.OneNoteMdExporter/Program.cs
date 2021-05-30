@@ -60,6 +60,13 @@ namespace alxnbl.OneNoteMdExporter
 
             OneNoteApp = new OneNote.Application();
 
+            //dirty fix to change output path by changing the current working directory.
+            //output path is defined multiple times through the program so will take longer to change.
+            var outPath = Path.Combine(Directory.GetCurrentDirectory(), "Output");
+            if (!Directory.Exists(outPath))
+                Directory.CreateDirectory(outPath);
+            Directory.SetCurrentDirectory(outPath);
+
             WelcomeScreen(opts);
 
             IList<Notebook> notebookToProcess;
